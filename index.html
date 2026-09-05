@@ -188,29 +188,29 @@
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo_7q1JFu4vMux_t4BeQiAfrKIDQwR9-j7GBg8oSmj3-x23IUTEPQx3XJIASmv8gup/exec";
 
-        // 실제 파일명 및 확장자(.jpeg, .jpg, .png) 정확히 대조 매칭 완벽 반영
+        // GitHub 서버 상의 대문자 확장자(.JPEG, .JPG, .png) 반영
         const items = [
-            { id: 1, name: "건축헌금봉투", img: "images/건축헌금봉투.jpeg" },
-            { id: 2, name: "대형배너2개", img: "images/대형배너2개.jpeg" },
+            { id: 1, name: "건축헌금봉투", img: "images/건축헌금봉투.JPEG" },
+            { id: 2, name: "대형배너2개", img: "images/대형배너2개.JPEG" },
             { id: 3, name: "명찰", img: "images/명찰.png" },
-            { id: 4, name: "사탕&바구니", img: "images/사탕&바구니.jpg" },
-            { id: 5, name: "새가족등록카드", img: "images/새가족등록카드.jpg" },
-            { id: 6, name: "새가족등록카드(일본어)", img: "images/새가족등록카드(일본어).jpg" },
-            { id: 7, name: "선교헌금봉투", img: "images/선교헌금봉투.jpeg" },
-            { id: 8, name: "성경책", img: "images/성경책.jpg" },
-            { id: 9, name: "십일조봉투", img: "images/십일조봉투.jpeg" },
-            { id: 10, name: "십일조아크릴", img: "images/십일조아크릴.jpg" },
-            { id: 11, name: "아크릴", img: "images/아크릴.jpeg" },
-            { id: 12, name: "양보아크릴", img: "images/양보아크릴.jpeg" },
-            { id: 13, name: "월정헌금봉투", img: "images/월정헌금봉투.jpeg" },
-            { id: 14, name: "월정헌금아크릴", img: "images/월정헌금아크릴.jpeg" },
-            { id: 15, name: "일본어주보 아크릴", img: "images/일본어주보 아크릴.jpeg" },
-            { id: 16, name: "중보기도함", img: "images/중보기도함.jpg" },
-            { id: 17, name: "지정헌금봉투", img: "images/지정헌금봉투.jpeg" },
-            { id: 18, name: "출석부", img: "images/출석부.jpeg" },
-            { id: 19, name: "한국어주보 아크릴", img: "images/한국어주보 아크릴.jpeg" },
-            { id: 20, name: "환영아크릴", img: "images/환영아크릴.jpeg" },
-            { id: 21, name: "후원 아크릴 및 안내지", img: "images/후원 아크릴 및 안내지.jpeg" }
+            { id: 4, name: "사탕&바구니", img: "images/사탕&바구니.JPG" },
+            { id: 5, name: "새가족등록카드", img: "images/새가족등록카드.JPG" },
+            { id: 6, name: "새가족등록카드(일본어)", img: "images/새가족등록카드(일본어).JPG" },
+            { id: 7, name: "선교헌금봉투", img: "images/선교헌금봉투.JPEG" },
+            { id: 8, name: "성경책", img: "images/성경책.JPG" },
+            { id: 9, name: "십일조봉투", img: "images/십일조봉투.JPEG" },
+            { id: 10, name: "십일조아크릴", img: "images/십일조아크릴.JPG" },
+            { id: 11, name: "아크릴", img: "images/아크릴.JPEG" },
+            { id: 12, name: "양보아크릴", img: "images/양보아크릴.JPEG" },
+            { id: 13, name: "월정헌금봉투", img: "images/월정헌금봉투.JPEG" },
+            { id: 14, name: "월정헌금아크릴", img: "images/월정헌금아크릴.JPEG" },
+            { id: 15, name: "일본어주보 아크릴", img: "images/일본어주보 아크릴.JPEG" },
+            { id: 16, name: "중보기도함", img: "images/중보기도함.JPG" },
+            { id: 17, name: "지정헌금봉투", img: "images/지정헌금봉투.JPEG" },
+            { id: 18, name: "출석부", img: "images/출석부.JPEG" },
+            { id: 19, name: "한국어주보 아크릴", img: "images/한국어주보 아크릴.JPEG" },
+            { id: 20, name: "환영아크릴", img: "images/환영아크릴.JPEG" },
+            { id: 21, name: "후원 아크릴 및 안내지", img: "images/후원 아크릴 및 안내지.JPEG" }
         ];
 
         document.getElementById('check-date').valueAsDate = new Date();
