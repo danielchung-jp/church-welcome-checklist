@@ -1,314 +1,360 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>동경지구촌교회 새가족팀 모바일 점검표</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --border: #cbd5e0;
+            --text: #2d3748;
+            --accent: #2b6cb0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 12px;
+            padding-bottom: 90px;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        header h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        header p { font-size: 12px; opacity: 0.85; }
+
+        .tab-menu {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #4a5568;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .meta-card {
+            background: var(--card-bg);
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+            display: flex;
+            gap: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .meta-card div { flex: 1; }
+        .meta-card label { display: block; font-size: 11px; font-weight: bold; color: #4a5568; margin-bottom: 6px; }
+        .meta-card input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .item-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .item-header { display: flex; align-items: center; gap: 12px; }
+        .item-img { width: 52px; height: 52px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); }
+        .item-info { flex: 1; }
+        .item-no { font-size: 11px; color: var(--accent); font-weight: bold; }
+        .item-title { font-size: 15px; font-weight: 700; color: #1a202c; }
+
+        .status-buttons { display: flex; gap: 8px; }
+        .btn-status {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--border);
+            background: #edf2f7;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #4a5568;
+            text-align: center;
+        }
+        .btn-status.active-o { background-color: #38a169; color: white; border-color: #38a169; }
+        .btn-status.active-x { background-color: #e53e3e; color: white; border-color: #e53e3e; }
+
+        .memo-input {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .history-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        .history-header {
+            font-weight: bold;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .fixed-footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: white;
+            padding: 12px 16px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .btn-action { padding: 12px; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; }
+        .btn-share { background-color: #fee500; color: #000; flex: 1; }
+        .btn-save { background-color: var(--primary); color: white; flex: 1; }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ko"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;동경지구촌교회 새가족팀 모바일 점검표&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--primary: #1a365d;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg: #f7fafc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border: #cbd5e0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text: #2d3748;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent: #2b6cb0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 90px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 상단 타이틀 헤더 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0,0,0,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header p { font-size: 12px; opacity: 0.85; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 점검자 및 날짜 입력 카드 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 1px 3px rgba(0,0,0,0.04);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-card div { flex: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-card label { display: block; font-size: 11px; font-weight: bold; color: #4a5568; margin-bottom: 6px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-card input {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-card input:focus {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 개별 물품 카드 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.item-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 1px 2px rgba(0,0,0,0.03);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.item-header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.item-img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 52px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 52px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.item-info { flex: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.item-no { font-size: 11px; color: var(--accent); font-weight: bold; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.item-title { font-size: 15px; font-weight: 700; color: #1a202c; margin-top: 2px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 상태 체크 선택 버튼 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.status-buttons {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-status {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #edf2f7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-tap-highlight-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-status.active-o {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #38a169;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: #38a169;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-status.active-x {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e53e3e;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: #e53e3e;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 메모 입력란 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.memo-input {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 9px 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.memo-input:focus {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 하단 고정 카톡 공유 바 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fixed-footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 -3px 10px rgba(0,0,0,0.06);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-action {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-share { background-color: #fee500; color: #000000; flex: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-reset { background-color: #edf2f7; color: #4a5568; width: 80px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;동경지구촌교회 새가족팀&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;📱 모바일 물품 점검표&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 점검 일자 및 담당자 이름 입력 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="meta-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="check-date"&gt;점검 일자&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="date" id="check-date"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="checker-name"&gt;점검자 이름&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="checker-name" placeholder="이름 입력"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="checklist-container"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 하단 액션 버튼 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="fixed-footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-action btn-reset" onclick="resetForm()"&gt;초기화&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-action btn-share" onclick="shareToKakao()"&gt;텍스트 복사 (카톡 공유용)&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const items = [</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 1, name: "건축헌금봉투", img: "images/건축헌금봉투.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 2, name: "대형배너2개", img: "images/대형배너2개.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 3, name: "사탕&amp;바구니", img: "images/사탕&amp;바구니.jpg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 4, name: "새가족등록카드", img: "images/새가족등록카드.jpg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 5, name: "새가족등록카드(일본어)", img: "images/새가족등록카드(일본어).jpg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 6, name: "선교헌금봉투", img: "images/선교헌금봉투.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 7, name: "성경책", img: "images/성경책.jpg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 8, name: "십일조봉투", img: "images/십일조봉투.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 9, name: "십일조아크릴", img: "images/십일조아크릴.jpg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 10, name: "중보기도함", img: "images/중보기도함.jpg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 11, name: "아크릴", img: "images/아크릴.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 12, name: "양보아크릴", img: "images/양보아크릴.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 13, name: "월정헌금봉투", img: "images/월정헌금봉투.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 14, name: "월정헌금아크릴", img: "images/월정헌금아크릴.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 15, name: "일본어주보 아크릴", img: "images/일본어주보 아크릴.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 16, name: "지정헌금봉투", img: "images/지정헌금봉투.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 17, name: "출석부", img: "images/출석부.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 18, name: "한국어주보 아크릴", img: "images/한국어주보 아크릴.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 19, name: "환영아크릴", img: "images/환영아크릴.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 20, name: "후원 아크릴 및 안내지", img: "images/후원 아크릴 및 안내지.jpeg" },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 21, name: "명찰주머니", img: "images/명찰.png" }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// 기본 오늘 날짜 지정</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('check-date').valueAsDate = new Date();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const container = document.getElementById('checklist-container');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const statusData = {};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// 화면 카드 생성</p>
-<p class="p1"><span class="Apple-converted-space">        </span>items.forEach(item =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const card = document.createElement('div');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>card.className = 'item-card';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>card.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="item-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="${item.img}" alt="${item.name}" class="item-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="item-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="item-no"&gt;No. ${item.id}&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="item-title"&gt;${item.name}&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="status-buttons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="btn-status" id="status-o-${item.id}" onclick="setStatus(${item.id}, 'O')"&gt;O (양호)&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="btn-status" id="status-x-${item.id}" onclick="setStatus(${item.id}, 'X')"&gt;X (보충필요)&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" class="memo-input" id="memo-${item.id}" placeholder="특이사항/이슈 입력 (선택)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>container.appendChild(card);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// O / X 상태 변경 함수</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function setStatus(id, value) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>statusData[id] = value;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const btnO = document.getElementById(`status-o-${id}`);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const btnX = document.getElementById(`status-x-${id}`);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (value === 'O') {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>btnO.classList.add('active-o');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>btnX.classList.remove('active-x');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>btnX.classList.add('active-x');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>btnO.classList.remove('active-o');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// 카톡 단체방 공유용 텍스트 복사 기능</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function shareToKakao() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const date = document.getElementById('check-date').value;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const name = document.getElementById('checker-name').value.trim() || '미입력';</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let report = `[동경지구촌교회 새가족팀 물품 점검]\n`;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>report += `📅 일자: ${date}\n`;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>report += `👤 점검자: ${name}\n`;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>report += `-------------------\n`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let issues = [];</p>
-<p class="p1"><span class="Apple-converted-space">            </span>items.forEach(item =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const status = statusData[item.id] || '-';</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const memo = document.getElementById(`memo-${item.id}`).value.trim();</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (status === 'X' || memo !== '') {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>report += `• ${item.name}: [${status}] ${memo ? memo : '특이사항 없음'}\n`;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>issues.push(item.id);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (issues.length === 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>report += `✅ 특이사항 없음 (모든 물품 양호)\n`;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>navigator.clipboard.writeText(report).then(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>alert('점검 결과가 복사되었습니다!\n카카오톡 단체방에 붙여넣기(Paste) 해주세요.');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}).catch(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>alert('복사에 실패했습니다. 권한을 확인해주세요.');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function resetForm() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (confirm('작성 중인 내용을 초기화하시겠습니까?')) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>location.reload();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <h1>동경지구촌교회 새가족팀</h1>
+        <p>📱 모바일 물품 점검 시스템</p>
+    </header>
+
+    <div class="tab-menu">
+        <button class="tab-btn active" onclick="switchTab('check')">주간 점검 작성</button>
+        <button class="tab-btn" onclick="switchTab('history')">과거 기록 조회</button>
+    </div>
+
+    <!-- 점검 작성 탭 -->
+    <div id="tab-check">
+        <div class="meta-card">
+            <div>
+                <label for="check-date">점검 일자</label>
+                <input type="date" id="check-date">
+            </div>
+            <div>
+                <label for="checker-name">점검자 이름</label>
+                <input type="text" id="checker-name" placeholder="이름 입력">
+            </div>
+        </div>
+
+        <div id="checklist-container"></div>
+
+        <div class="fixed-footer">
+            <button class="btn-action btn-save" onclick="saveToGoogleSheets()">시트 저장 & 기록 누적</button>
+            <button class="btn-action btn-share" onclick="shareToKakao()">카톡 요약 복사</button>
+        </div>
+    </div>
+
+    <!-- 히스토리 탭 -->
+    <div id="tab-history" style="display: none;">
+        <div id="history-container">데이터를 불러오는 중입니다...</div>
+    </div>
+
+    <script>
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo_7q1JFu4vMux_t4BeQiAfrKIDQwR9-j7GBg8oSmj3-x23IUTEPQx3XJIASmv8gup/exec";
+
+        const items = [
+            { id: 1, name: "건축헌금봉투", img: "images/건축헌금봉투.jpeg" },
+            { id: 2, name: "대형배너2개", img: "images/대형배너2개.jpeg" },
+            { id: 3, name: "사탕&바구니", img: "images/사탕&바구니.jpg" },
+            { id: 4, name: "새가족등록카드", img: "images/새가족등록카드.jpg" },
+            { id: 5, name: "새가족등록카드(일본어)", img: "images/새가족등록카드(일본어).jpg" },
+            { id: 6, name: "선교헌금봉투", img: "images/선교헌금봉투.jpeg" },
+            { id: 7, name: "성경책", img: "images/성경책.jpg" },
+            { id: 8, name: "십일조봉투", img: "images/십일조봉투.jpeg" },
+            { id: 9, name: "십일조아크릴", img: "images/십일조아크릴.jpg" },
+            { id: 10, name: "중보기도함", img: "images/중보기도함.jpg" },
+            { id: 11, name: "아크릴", img: "images/아크릴.jpeg" },
+            { id: 12, name: "양보아크릴", img: "images/양보아크릴.jpeg" },
+            { id: 13, name: "월정헌금봉투", img: "images/월정헌금봉투.jpeg" },
+            { id: 14, name: "월정헌금아크릴", img: "images/월정헌금아크릴.jpeg" },
+            { id: 15, name: "일본어주보 아크릴", img: "images/일본어주보 아크릴.jpeg" },
+            { id: 16, name: "지정헌금봉투", img: "images/지정헌금봉투.jpeg" },
+            { id: 17, name: "출석부", img: "images/출석부.jpeg" },
+            { id: 18, name: "한국어주보 아크릴", img: "images/한국어주보 아크릴.jpeg" },
+            { id: 19, name: "환영아크릴", img: "images/환영아크릴.jpeg" },
+            { id: 20, name: "후원 아크릴 및 안내지", img: "images/후원 아크릴 및 안내지.jpeg" },
+            { id: 21, name: "명찰주머니", img: "images/명찰.png" }
+        ];
+
+        document.getElementById('check-date').valueAsDate = new Date();
+        const container = document.getElementById('checklist-container');
+        const statusData = {};
+
+        items.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'item-card';
+            card.innerHTML = `
+                <div class="item-header">
+                    <img src="${item.img}" alt="${item.name}" class="item-img">
+                    <div class="item-info">
+                        <div class="item-no">No. ${item.id}</div>
+                        <div class="item-title">${item.name}</div>
+                    </div>
+                </div>
+                <div class="status-buttons">
+                    <div class="btn-status" id="status-o-${item.id}" onclick="setStatus(${item.id}, 'O')">O (양호)</div>
+                    <div class="btn-status" id="status-x-${item.id}" onclick="setStatus(${item.id}, 'X')">X (보충필요)</div>
+                </div>
+                <input type="text" class="memo-input" id="memo-${item.id}" placeholder="특이사항/이슈 입력 (선택)">
+            `;
+            container.appendChild(card);
+        });
+
+        function setStatus(id, value) {
+            statusData[id] = value;
+            const btnO = document.getElementById(`status-o-${id}`);
+            const btnX = document.getElementById(`status-x-${id}`);
+
+            if (value === 'O') {
+                btnO.classList.add('active-o');
+                btnX.classList.remove('active-x');
+            } else {
+                btnX.classList.add('active-x');
+                btnO.classList.remove('active-o');
+            }
+        }
+
+        function switchTab(tab) {
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            
+            if (tab === 'check') {
+                btns[0].classList.add('active');
+                document.getElementById('tab-check').style.display = 'block';
+                document.getElementById('tab-history').style.display = 'none';
+            } else {
+                btns[1].classList.add('active');
+                document.getElementById('tab-check').style.display = 'none';
+                document.getElementById('tab-history').style.display = 'block';
+                loadHistory();
+            }
+        }
+
+        function saveToGoogleSheets() {
+            const date = document.getElementById('check-date').value;
+            const name = document.getElementById('checker-name').value.trim();
+
+            if (!name) {
+                alert('점검자 이름을 입력해 주세요.');
+                return;
+            }
+
+            const payload = {
+                date: date,
+                checker: name,
+                items: items.map(item => ({
+                    name: item.name,
+                    status: statusData[item.id] || '-',
+                    memo: document.getElementById(`memo-${item.id}`).value.trim()
+                }))
+            };
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                alert('구글 시트에 점검 기록이 누적 저장되었습니다!');
+            }).catch(err => alert('저장 실패: ' + err));
+        }
+
+        function loadHistory() {
+            const histContainer = document.getElementById('history-container');
+            histContainer.innerHTML = '구글 시트에서 과거 기록을 불러오는 중...';
+
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(res => res.json())
+                .then(rows => {
+                    if (rows.length <= 1) {
+                        histContainer.innerHTML = '누적된 점검 기록이 없습니다.';
+                        return;
+                    }
+                    
+                    let html = '';
+                    const grouped = {};
+                    for(let i = 1; i < rows.length; i++) {
+                        const key = `${rows[i][1]} (${rows[i][2]})`;
+                        if(!grouped[key]) grouped[key] = [];
+                        grouped[key].push({ name: rows[i][3], status: rows[i][4], memo: rows[i][5] });
+                    }
+
+                    for(let key in grouped) {
+                        html += `<div class="history-card">
+                            <div class="history-header">📅 ${key}</div>`;
+                        grouped[key].forEach(item => {
+                            if(item.status === 'X' || item.memo) {
+                                html += `<div style="font-size:12px; color:#e53e3e; margin-bottom:2px;">• ${item.name}: [${item.status}] ${item.memo}</div>`;
+                            }
+                        });
+                        html += `</div>`;
+                    }
+                    histContainer.innerHTML = html || '모든 점검 내역이 양호합니다.';
+                })
+                .catch(() => {
+                    histContainer.innerHTML = '히스토리를 불러오지 못했습니다.';
+                });
+        }
+
+        function shareToKakao() {
+            const date = document.getElementById('check-date').value;
+            const name = document.getElementById('checker-name').value.trim() || '미입력';
+
+            let report = `[동경지구촌교회 새가족팀 물품 점검]\n`;
+            report += `📅 일자: ${date}\n👤 점검자: ${name}\n-------------------\n`;
+
+            let issues = [];
+            items.forEach(item => {
+                const status = statusData[item.id] || '-';
+                const memo = document.getElementById(`memo-${item.id}`).value.trim();
+                if (status === 'X' || memo !== '') {
+                    report += `• ${item.name}: [${status}] ${memo ? memo : '특이사항 없음'}\n`;
+                    issues.push(item.id);
+                }
+            });
+
+            if (issues.length === 0) report += `✅ 특이사항 없음 (모든 물품 양호)\n`;
+
+            navigator.clipboard.writeText(report).then(() => {
+                alert('점검 결과가 복사되었습니다!\n카카오톡 단체방에 붙여넣기 해주세요.');
+            });
+        }
+    </script>
 </body>
 </html>
