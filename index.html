@@ -241,7 +241,6 @@
     </div>
 
     <script>
-        // ★ 비밀번호가 1225로 설정되었습니다 ★
         const SITE_PASSWORD = "1225";
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo_7q1JFu4vMux_t4BeQiAfrKIDQwR9-j7GBg8oSmj3-x23IUTEPQx3XJIASmv8gup/exec";
 
@@ -416,6 +415,7 @@
                 });
         }
 
+        // 특이사항이 없는 경우 커스텀 메시지 출력으로 수정
         function shareToKakao() {
             const date = document.getElementById('check-date').value;
             const name = document.getElementById('checker-name').value.trim() || '미입력';
@@ -433,7 +433,9 @@
                 }
             });
 
-            if (issues.length === 0) report += `✅ 특이사항 없음 (모든 물품 양호)\n`;
+            if (issues.length === 0) {
+                report += `오늘은 특별한 이슈가 없습니다. 모두 고생하셨습니다. 즐거운 주일 되세요!\n`;
+            }
 
             navigator.clipboard.writeText(report).then(() => {
                 alert('점검 결과가 복사되었습니다!\n카카오톡 단체방에 붙여넣기 해주세요.');
