@@ -23,6 +23,51 @@
             padding-bottom: 90px;
         }
 
+        /* 비밀번호 모달 스타일 */
+        #auth-modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .auth-card {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            width: 85%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .auth-card h2 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+        .auth-card p { font-size: 12px; color: #718096; margin-bottom: 16px; }
+        .auth-card input {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 4px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            outline: none;
+        }
+        .auth-card button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         header {
             background-color: var(--primary);
             color: white;
@@ -149,6 +194,16 @@
 </head>
 <body>
 
+    <!-- 비밀번호 인증 팝업 -->
+    <div id="auth-modal">
+        <div class="auth-card">
+            <h2>🔒 팀원 인증</h2>
+            <p>새가족팀 접속 비밀번호를 입력해 주세요.</p>
+            <input type="password" id="input-password" placeholder="비밀번호" maxlength="10">
+            <button onclick="checkPassword()">확인</button>
+        </div>
+    </div>
+
     <header>
         <h1>동경지구촌교회 새가족팀</h1>
         <p>📱 모바일 물품 점검 시스템</p>
@@ -186,9 +241,28 @@
     </div>
 
     <script>
+        // ★ 비밀번호가 1225로 설정되었습니다 ★
+        const SITE_PASSWORD = "1225";
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo_7q1JFu4vMux_t4BeQiAfrKIDQwR9-j7GBg8oSmj3-x23IUTEPQx3XJIASmv8gup/exec";
 
-        // 주일헌금(22번), 감사헌금(23번) 포함 총 23개 항목
+        // 접속 인증 확인
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('auth_passed') === 'true') {
+                document.getElementById('auth-modal').style.display = 'none';
+            }
+        });
+
+        function checkPassword() {
+            const input = document.getElementById('input-password').value;
+            if (input === SITE_PASSWORD) {
+                localStorage.setItem('auth_passed', 'true');
+                document.getElementById('auth-modal').style.display = 'none';
+            } else {
+                alert('비밀번호가 올바르지 않습니다.');
+                document.getElementById('input-password').value = '';
+            }
+        }
+
         const items = [
             { id: 1, name: "건축헌금봉투", img: "images/1.jpg" },
             { id: 2, name: "대형배너2개", img: "images/2.jpg" },
@@ -278,14 +352,21 @@
                 return;
             }
 
+            const filteredItems = items.map(item => ({
+                name: item.name,
+                status: statusData[item.id] || '-',
+                memo: document.getElementById(`memo-${item.id}`).value.trim()
+            })).filter(item => item.status === 'X' || item.memo !== '');
+
+            if (filteredItems.length === 0) {
+                alert('특이사항(X 또는 메모)이 있는 항목이 없습니다. 모든 물품이 양호하면 시트에 저장할 내역이 없습니다.');
+                return;
+            }
+
             const payload = {
                 date: date,
                 checker: name,
-                items: items.map(item => ({
-                    name: item.name,
-                    status: statusData[item.id] || '-',
-                    memo: document.getElementById(`memo-${item.id}`).value.trim()
-                }))
+                items: filteredItems
             };
 
             fetch(GOOGLE_SCRIPT_URL, {
@@ -294,7 +375,7 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             }).then(() => {
-                alert('구글 시트에 점검 기록이 누적 저장되었습니다!');
+                alert('구글 시트에 특이사항 점검 기록이 누적 저장되었습니다!');
             }).catch(err => alert('저장 실패: ' + err));
         }
 
