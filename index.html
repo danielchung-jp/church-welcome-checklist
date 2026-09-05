@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ko"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;동경지구촌교회 새가족팀 모바일 점검표&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary: #1a365d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg: #f7fafc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border: #cbd5e0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text: #2d3748;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--accent: #2b6cb0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 상단 타이틀 헤더 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header p { font-size: 12px; opacity: 0.85; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 점검자 및 날짜 입력 카드 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.meta-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 1px 3px rgba(0,0,0,0.04);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.meta-card div { flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.meta-card label { display: block; font-size: 11px; font-weight: bold; color: #4a5568; margin-bottom: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.meta-card input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.meta-card input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 개별 물품 카드 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.item-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 1px 2px rgba(0,0,0,0.03);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.item-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.item-img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 52px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 52px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.item-info { flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.item-no { font-size: 11px; color: var(--accent); font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.item-title { font-size: 15px; font-weight: 700; color: #1a202c; margin-top: 2px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 상태 체크 선택 버튼 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.status-buttons {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-status {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #edf2f7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-tap-highlight-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-status.active-o {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #38a169;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #38a169;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-status.active-x {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e53e3e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #e53e3e;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 메모 입력란 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.memo-input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 9px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.memo-input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 하단 고정 카톡 공유 바 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fixed-footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 -3px 10px rgba(0,0,0,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-action {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-share { background-color: #fee500; color: #000000; flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-reset { background-color: #edf2f7; color: #4a5568; width: 80px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;동경지구촌교회 새가족팀&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;📱 모바일 물품 점검표&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 점검 일자 및 담당자 이름 입력 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="meta-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="check-date"&gt;점검 일자&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="date" id="check-date"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="checker-name"&gt;점검자 이름&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="checker-name" placeholder="이름 입력"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="checklist-container"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 하단 액션 버튼 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="fixed-footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-action btn-reset" onclick="resetForm()"&gt;초기화&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-action btn-share" onclick="shareToKakao()"&gt;텍스트 복사 (카톡 공유용)&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const items = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 1, name: "건축헌금봉투", img: "images/건축헌금봉투.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 2, name: "대형배너2개", img: "images/대형배너2개.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 3, name: "사탕&amp;바구니", img: "images/사탕&amp;바구니.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 4, name: "새가족등록카드", img: "images/새가족등록카드.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 5, name: "새가족등록카드(일본어)", img: "images/새가족등록카드(일본어).jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 6, name: "선교헌금봉투", img: "images/선교헌금봉투.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 7, name: "성경책", img: "images/성경책.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 8, name: "십일조봉투", img: "images/십일조봉투.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 9, name: "십일조아크릴", img: "images/십일조아크릴.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 10, name: "중보기도함", img: "images/중보기도함.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 11, name: "아크릴", img: "images/아크릴.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 12, name: "양보아크릴", img: "images/양보아크릴.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 13, name: "월정헌금봉투", img: "images/월정헌금봉투.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 14, name: "월정헌금아크릴", img: "images/월정헌금아크릴.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 15, name: "일본어주보 아크릴", img: "images/일본어주보 아크릴.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 16, name: "지정헌금봉투", img: "images/지정헌금봉투.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 17, name: "출석부", img: "images/출석부.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 18, name: "한국어주보 아크릴", img: "images/한국어주보 아크릴.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 19, name: "환영아크릴", img: "images/환영아크릴.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 20, name: "후원 아크릴 및 안내지", img: "images/후원 아크릴 및 안내지.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 21, name: "명찰주머니", img: "images/명찰.png" }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 기본 오늘 날짜 지정</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('check-date').valueAsDate = new Date();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const container = document.getElementById('checklist-container');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const statusData = {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 화면 카드 생성</p>
+<p class="p1"><span class="Apple-converted-space">        </span>items.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>card.className = 'item-card';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>card.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="item-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="${item.img}" alt="${item.name}" class="item-img"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="item-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="item-no"&gt;No. ${item.id}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="item-title"&gt;${item.name}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="status-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="btn-status" id="status-o-${item.id}" onclick="setStatus(${item.id}, 'O')"&gt;O (양호)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="btn-status" id="status-x-${item.id}" onclick="setStatus(${item.id}, 'X')"&gt;X (보충필요)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" class="memo-input" id="memo-${item.id}" placeholder="특이사항/이슈 입력 (선택)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// O / X 상태 변경 함수</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setStatus(id, value) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>statusData[id] = value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const btnO = document.getElementById(`status-o-${id}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const btnX = document.getElementById(`status-x-${id}`);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (value === 'O') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btnO.classList.add('active-o');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btnX.classList.remove('active-x');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btnX.classList.add('active-x');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btnO.classList.remove('active-o');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 카톡 단체방 공유용 텍스트 복사 기능</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function shareToKakao() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const date = document.getElementById('check-date').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const name = document.getElementById('checker-name').value.trim() || '미입력';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let report = `[동경지구촌교회 새가족팀 물품 점검]\n`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>report += `📅 일자: ${date}\n`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>report += `👤 점검자: ${name}\n`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>report += `-------------------\n`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let issues = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>items.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const status = statusData[item.id] || '-';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const memo = document.getElementById(`memo-${item.id}`).value.trim();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (status === 'X' || memo !== '') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>report += `• ${item.name}: [${status}] ${memo ? memo : '특이사항 없음'}\n`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>issues.push(item.id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (issues.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>report += `✅ 특이사항 없음 (모든 물품 양호)\n`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>navigator.clipboard.writeText(report).then(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('점검 결과가 복사되었습니다!\n카카오톡 단체방에 붙여넣기(Paste) 해주세요.');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).catch(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('복사에 실패했습니다. 권한을 확인해주세요.');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function resetForm() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (confirm('작성 중인 내용을 초기화하시겠습니까?')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>location.reload();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
