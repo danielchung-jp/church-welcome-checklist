@@ -188,29 +188,29 @@
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo_7q1JFu4vMux_t4BeQiAfrKIDQwR9-j7GBg8oSmj3-x23IUTEPQx3XJIASmv8gup/exec";
 
-        // GitHub 서버 상의 대문자 확장자(.JPEG, .JPG, .png) 반영
+        // 숫자 파일명 매칭
         const items = [
-            { id: 1, name: "건축헌금봉투", img: "images/건축헌금봉투.JPEG" },
-            { id: 2, name: "대형배너2개", img: "images/대형배너2개.JPEG" },
-            { id: 3, name: "명찰", img: "images/명찰.png" },
-            { id: 4, name: "사탕&바구니", img: "images/사탕&바구니.JPG" },
-            { id: 5, name: "새가족등록카드", img: "images/새가족등록카드.JPG" },
-            { id: 6, name: "새가족등록카드(일본어)", img: "images/새가족등록카드(일본어).JPG" },
-            { id: 7, name: "선교헌금봉투", img: "images/선교헌금봉투.JPEG" },
-            { id: 8, name: "성경책", img: "images/성경책.JPG" },
-            { id: 9, name: "십일조봉투", img: "images/십일조봉투.JPEG" },
-            { id: 10, name: "십일조아크릴", img: "images/십일조아크릴.JPG" },
-            { id: 11, name: "아크릴", img: "images/아크릴.JPEG" },
-            { id: 12, name: "양보아크릴", img: "images/양보아크릴.JPEG" },
-            { id: 13, name: "월정헌금봉투", img: "images/월정헌금봉투.JPEG" },
-            { id: 14, name: "월정헌금아크릴", img: "images/월정헌금아크릴.JPEG" },
-            { id: 15, name: "일본어주보 아크릴", img: "images/일본어주보 아크릴.JPEG" },
-            { id: 16, name: "중보기도함", img: "images/중보기도함.JPG" },
-            { id: 17, name: "지정헌금봉투", img: "images/지정헌금봉투.JPEG" },
-            { id: 18, name: "출석부", img: "images/출석부.JPEG" },
-            { id: 19, name: "한국어주보 아크릴", img: "images/한국어주보 아크릴.JPEG" },
-            { id: 20, name: "환영아크릴", img: "images/환영아크릴.JPEG" },
-            { id: 21, name: "후원 아크릴 및 안내지", img: "images/후원 아크릴 및 안내지.JPEG" }
+            { id: 1, name: "건축헌금봉투", img: "images/1.jpg" },
+            { id: 2, name: "대형배너2개", img: "images/2.jpg" },
+            { id: 3, name: "명찰", img: "images/3.jpg" },
+            { id: 4, name: "사탕&바구니", img: "images/4.jpg" },
+            { id: 5, name: "새가족등록카드", img: "images/5.jpg" },
+            { id: 6, name: "새가족등록카드(일본어)", img: "images/6.jpg" },
+            { id: 7, name: "선교헌금봉투", img: "images/7.jpg" },
+            { id: 8, name: "성경책", img: "images/8.jpg" },
+            { id: 9, name: "십일조봉투", img: "images/9.jpg" },
+            { id: 10, name: "십일조아크릴", img: "images/10.jpg" },
+            { id: 11, name: "아크릴", img: "images/11.jpg" },
+            { id: 12, name: "양보아크릴", img: "images/12.jpg" },
+            { id: 13, name: "월정헌금봉투", img: "images/13.jpg" },
+            { id: 14, name: "월정헌금아크릴", img: "images/14.jpg" },
+            { id: 15, name: "일본어주보 아크릴", img: "images/15.jpg" },
+            { id: 16, name: "중보기도함", img: "images/16.jpg" },
+            { id: 17, name: "지정헌금봉투", img: "images/17.jpg" },
+            { id: 18, name: "출석부", img: "images/18.jpg" },
+            { id: 19, name: "한국어주보 아크릴", img: "images/19.jpg" },
+            { id: 20, name: "환영아크릴", img: "images/20.jpg" },
+            { id: 21, name: "후원 아크릴 및 안내지", img: "images/21.jpg" }
         ];
 
         document.getElementById('check-date').valueAsDate = new Date();
@@ -222,7 +222,7 @@
             card.className = 'item-card';
             card.innerHTML = `
                 <div class="item-header">
-                    <img src="${encodeURI(item.img)}" alt="${item.name}" class="item-img">
+                    <img src="${item.img}" alt="${item.name}" class="item-img">
                     <div class="item-info">
                         <div class="item-no">No. ${item.id}</div>
                         <div class="item-title">${item.name}</div>
